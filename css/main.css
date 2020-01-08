@@ -1,0 +1,828 @@
+body {
+	background-color: #000;
+	color:            #fff;
+	font-family:      Times New Roman;
+	font-size:        16px;
+	line-height:      1.6;
+	min-width:        320px;
+	position:         relative
+}
+
+.fixed-num {
+	position: fixed;
+	top: 0;
+	text-align: center;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	transition: .3s;
+	z-index: 9;
+	pointer-events: none;
+}
+
+body[class*=fp-viewing-tub-] .fixed-num-tub, body[class*=fp-viewing-sink-] .fixed-num-sink {
+	opacity: 1;
+	transition-delay: .6s;
+}
+
+body[class*=fp-viewing-sink-] .fixed-num-sink .anchor-numbers, body[class*=fp-viewing-tub-] .fixed-num-tub .anchor-numbers {
+	pointer-events: all;
+}
+
+.fp-viewing-tub-1 .anchor-numbers__num-block a:nth-child(1), .fp-viewing-sink-1 .anchor-numbers__num-block a:nth-child(1) {
+	opacity: 1;
+}
+
+.fp-viewing-tub-2 .anchor-numbers__num-block a:nth-child(2), .fp-viewing-sink-2 .anchor-numbers__num-block a:nth-child(2) {
+	opacity: 1;
+}
+
+.fp-viewing-tub-3 .anchor-numbers__num-block a:nth-child(3), .fp-viewing-sink-3 .anchor-numbers__num-block a:nth-child(3) {
+	opacity: 1;
+}
+
+.fp-viewing-tub-4 .anchor-numbers__num-block a:nth-child(4), .fp-viewing-sink-4 .anchor-numbers__num-block a:nth-child(4) {
+	opacity: 1;
+}
+
+.fp-viewing-tub-5 .anchor-numbers__num-block a:nth-child(5), .fp-viewing-sink-5 .anchor-numbers__num-block a:nth-child(5) {
+	opacity: 1;
+}
+
+.fp-viewing-tub-6 .anchor-numbers__num-block a:nth-child(6), .fp-viewing-sink-6 .anchor-numbers__num-block a:nth-child(6) {
+	opacity: 1;
+}
+
+.slider-block-fixed .slider-block > div:last-child {
+	opacity:        0;
+	pointer-events: none
+}
+
+*, ::after, ::before {
+	box-sizing: border-box
+}
+
+a {
+	color:           #fff;
+	text-decoration: none;
+	cursor:          pointer;
+	outline:         0;
+	box-shadow:      none
+}
+
+button {
+	outline:    0;
+	box-shadow: none;
+	font-family: Times New Roman;
+}
+
+.d-none {
+	display: none !important
+}
+
+.d-flex {
+	display:       -ms-flexbox;
+	display:       flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap:     wrap
+}
+
+.col {
+	-ms-flex-preferred-size: 0;
+	flex-basis:              0;
+	-ms-flex-positive:       1;
+	flex-grow:               1;
+	max-width:               100%
+}
+
+.overflow-hidden {
+	overflow: hidden
+}
+
+.preloader {
+	position:         fixed;
+	z-index:          10;
+	top:              0;
+	left:             0;
+	right:            0;
+	bottom:           0;
+	background-color: #000;
+	display:          flex;
+	align-items:      center;
+	justify-content:  center;
+	transition:       1s .5s
+}
+
+.preloader.hide {
+	opacity:        0;
+	pointer-events: none
+}
+
+.preloader img {
+	max-height: 40vh;
+	max-width:  60vw;
+	display:    block;
+	width:      300px
+}
+
+.heading-large {
+	font-size: 3em;
+	color:     #fff;
+	margin:    0;
+	padding:   0
+}
+
+p {
+	font-size: 2em;
+	color:     #fff;
+	margin:    1em 0;
+	padding:   0
+}
+
+.fixed-bottom, .fixed-left, .fixed-right {
+	transition:       .6s ease-in-out;
+	opacity:          1;
+	transition-delay: .6s;
+	z-index:          7
+}
+
+.fp-viewing-head .fixed-bottom, .fp-viewing-head .fixed-left, .fp-viewing-head .fixed-right {
+	opacity:          0;
+	transition-delay: 0s
+}
+
+.close-icon {
+	position: absolute;
+	top:      15px;
+	right:    15px;
+	width:    20px;
+	height:   20px;
+	cursor:   pointer
+}
+
+.close-icon img {
+	transition: .3s
+}
+
+.close-icon:hover img {
+	transform: scale(.9)
+}
+
+.text-block {
+	display:           -moz-flex;
+	display:           flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap:         wrap;
+	justify-content:   center;
+	align-items:       center;
+	height:            100%
+}
+
+.text-block__animation span {
+	display:    block;
+	transition: .6s;
+	transform:  translateY(-100%)
+}
+
+.section.active .text-block__animation span {
+	transition-delay: .6s;
+	transform:        translateY(0)
+}
+
+.section.active .text-block__animation div:nth-child(2) span {
+	transition-delay: .7s
+}
+
+.section.active .text-block__animation div:nth-child(3) span {
+	transition-delay: .8s
+}
+
+.text-block__text {
+	max-width: 600px
+}
+
+.section .fixed-bottom, .section .fixed-left, .section .fixed-right, .text-block__text p {
+	transition: .6s;
+	opacity:    0
+}
+
+.section.active .fixed-bottom, .section.active .fixed-left, .section.active .text-block__text p {
+	transition-delay: .9s;
+	opacity:          1
+}
+
+.fp-section.fp-table, .fp-slide.fp-table, .fp-tableCell {
+	display: block
+}
+
+.section {
+	text-align: center;
+	overflow:   hidden
+}
+
+.video-bg {
+	position:         relative;
+	width:            100vw;
+	height:           100vh;
+	max-height:       100%;
+	max-width:        100%;
+	background-color: #000;
+	object-fit:       cover;
+	z-index:          1
+}
+
+.arrow-down {
+	position:  absolute;
+	bottom:    50px;
+	left:      50%;
+	z-index:   2;
+	height:    40px;
+	cursor:    pointer;
+	transform: translateX(-50%)
+}
+
+.arrow-down:hover object {
+	transform: translateY(5px)
+}
+
+.arrow-down object {
+	height:         100%;
+	transition:     .3s;
+	pointer-events: none
+}
+
+#section0 {
+	overflow: hidden
+}
+
+video::-webkit-media-controls {
+	display: none !important
+}
+
+.slider-block-fixed {
+	position:   fixed;
+	top:        0;
+	left:       0;
+	right:      0;
+	bottom:     0;
+	z-index:    9;
+	transition: .3s ease-in-out
+}
+
+.slider-block-fixed.hide {
+	pointer-events: none;
+	opacity:        0
+}
+
+.slider-block-fixed .slider-container {
+	background-color: rgba(0, 0, 0, .5);
+	padding:          0 10px;
+	position:         relative
+}
+
+.scrollable {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height:     100%;
+	width:      100%;
+	padding:    0 30px
+}
+
+.slider-block-fixed .slider-container p {
+	font-size: 1rem;
+	color:     #bfbfbf
+}
+
+.slider-block-fixed .slide-info-block a {
+	color: #bfbfbf
+}
+
+.slider-block-fixed__center {
+	align-self: center
+}
+
+.slider-block-fixed__link-icon {
+	margin-top:  14px;
+	margin-left: auto;
+	width:       22px;
+	height:      22px;
+	display:     block
+}
+
+.slider-block-fixed__link-icon img {
+	width:  100%;
+	height: 100%
+}
+
+.slider-block {
+	height:        70vh;
+	width:         90%;
+	max-width:     1440px;
+	top:           15vh;
+	position:      relative;
+	display:       -ms-flexbox;
+	display:       flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap:     wrap;
+	margin:        0 auto
+}
+
+.slider-container {
+	height:   100%;
+	width:    106vh;
+	position: relative
+}
+
+.slider-container__info {
+	position:         absolute;
+	z-index:          2;
+	top:              0;
+	left:             0;
+	right:            0;
+	bottom:           0;
+	background-color: rgba(0, 0, 0, .6);
+	align-items:      center;
+	padding:          0 20px;
+	transition:       .5s ease-in-out
+}
+
+.slider-container__info.hide {
+	opacity:        0;
+	pointer-events: none
+}
+
+.slider-container__info > div:first-child {
+	-ms-flex:   0 0 40%;
+	flex:       0 0 40%;
+	max-width:  40%;
+	max-height: 100%;
+	text-align: left
+}
+
+.slider-container__info > div:first-child span {
+	display: block;
+	color:   #bfbfbf
+}
+
+.slider-container__info > div:first-child span:first-child {
+	padding-bottom: 10px
+}
+
+.slider-container__info > div:last-child {
+	-ms-flex:   0 0 60%;
+	flex:       0 0 60%;
+	max-width:  60%;
+	max-height: 100%;
+	height:     auto;
+	overflow-y: auto;
+	text-align: left
+}
+
+.slider-container__info > div:last-child a, .slider-container__info > div:last-child h2 {
+	font-size: 1.5rem
+}
+
+.slider-container__info > div:last-child a {
+	text-decoration: underline;
+	text-transform:  uppercase
+}
+
+.slider-container__info > div:last-child p {
+	font-size: 1rem;
+	color:     #bfbfbf
+}
+
+.slide-info-block {
+	padding-right: 20px;
+	text-align:    right;
+	display:       flex;
+	flex-wrap:     wrap
+}
+
+.slide-info-block span, .slide-info-block > :not(button) {
+	display:   block;
+	font-size: 1rem;
+	flex:      0 0 100%;
+	width:     100%
+}
+
+.slide-info-block > button {
+	display:    block;
+	font-size:  1rem;
+	align-self: flex-end;
+	cursor:     pointer;
+	text-align: right
+}
+
+.slide-info-block .slide-info-block__num, .slide-info-block .slider-block-fixed__title {
+	font-size: 2rem
+}
+
+.slide-info-block .slider-block-fixed__title {
+	font-weight: 700
+}
+
+.slide-info-block__details {
+	color:            #fff;
+	border:           none;
+	background-color: transparent;
+	margin-left:      auto;
+	padding:          0
+}
+
+.anchor-numbers {
+	height: 100%
+}
+
+.anchor-numbers {
+	display:   flex;
+	flex-wrap: wrap;
+	position:  relative
+}
+
+.anchor-numbers > * {
+	flex: 0 0 100%
+}
+
+.anchor-numbers__line {
+	border-left: 1px solid #fff;
+	width:       1px;
+	top:         0;
+	bottom:      0;
+	left:        50%;
+	position:    absolute
+}
+
+.anchor-numbers__num-block {
+	position:         relative;
+	z-index:          2;
+	align-self:       center;
+	background-color: #000;
+	padding:          20px
+}
+
+.anchor-numbers__num-block > * {
+	display:    block;
+	padding:    10px 0;
+	transition: .3s
+}
+
+.anchor-numbers__num-block > :not(.active) {
+	opacity: .6
+}
+
+.anchor-numbers__num-block > :hover:not(.active) {
+	opacity: .9
+}
+
+.fixed-left, .fixed-right {
+	position:        absolute;
+	top:             0;
+	bottom:          0;
+	display:         -ms-flexbox;
+	display:         flex;
+	align-items:     center;
+	width:           45px;
+	justify-content: center
+}
+
+.fixed-left {
+	left: 0
+}
+
+.fixed-right {
+	right: 0
+}
+
+.fixed-bottom {
+	position:   absolute;
+	bottom:     15px;
+	left:       50%;
+	right:      auto;
+	text-align: center;
+	transform:  translateX(-50%)
+}
+
+.fixed-top {
+	position:   absolute;
+	top:        15px;
+	left:       0;
+	right:      0;
+	text-align: center;
+	z-index:    9
+}
+
+.fixed-top img {
+	height:       50px;
+	display:      block;
+	margin-left:  auto;
+	margin-right: auto
+}
+
+.fixed-left a, .fixed-right a {
+	writing-mode: vertical-rl;
+	opacity:      .6;
+	transition:   .6s
+}
+
+.fixed-left a:hover, .fixed-right a:hover {
+	opacity: .9
+}
+
+.fixed-left a span, .fixed-right a span {
+	display:   block;
+	transform: rotate(180deg)
+}
+
+body[class*=" fp-viewing-tub-"] .fixed-left a {
+	opacity: 1
+}
+
+body[class*=" fp-viewing-sink-"] .fixed-right a {
+	opacity: 1
+}
+
+.owl-carousel {
+	width:  100%;
+	height: 100%
+}
+
+.owl-carousel img.owl-arrow {
+	width:   90px;
+	height:  90px;
+	padding: 20px
+}
+
+.owl-prev img.owl-arrow {
+	transform: rotate(90deg)
+}
+
+.owl-next img.owl-arrow {
+	transform: rotate(-90deg)
+}
+
+.owl-carousel .owl-nav {
+	opacity:    0;
+	transition: .5s
+}
+
+.owl-carousel:hover .owl-nav {
+	opacity: 1
+}
+
+.owl-carousel img {
+	height:        70vh;
+	width:         100%;
+	-o-object-fit: contain;
+	object-fit:    contain
+}
+
+.owl-carousel .owl-dots {
+	text-align: right
+}
+
+.owl-carousel button.owl-dot {
+	height:       10px;
+	width:        10px;
+	border:       1px solid #fff;
+	margin-right: 3px
+}
+
+.owl-carousel button.owl-dot.active {
+	background-color: #fff
+}
+
+.owl-nav {
+	display:         flex;
+	justify-content: space-between;
+	align-items:     center;
+	position:        absolute;
+	top:             0;
+	left:            0;
+	right:           0;
+	bottom:          0;
+	pointer-events:  none
+}
+
+.owl-nav > button {
+	pointer-events: all
+}
+
+.section .slide-info-block {
+	transition: .3s;
+	position:   relative;
+	right:      0
+}
+
+.text-block__text {
+	transition: .3s
+}
+
+.bottom-close {
+	position:   fixed;
+	bottom:     15px;
+	left:       0;
+	right:      0;
+	text-align: center;
+	cursor:     pointer
+}
+
+.hide .bottom-close {
+	display: none
+}
+
+.hide-all .section .slide-info-block {
+	opacity: 0;
+	right:   -10%
+}
+
+.hide-all .text-block__text {
+	opacity: 0
+}
+
+.hide-all .fixed-bottom {
+	display: none
+}
+
+@media (max-width: 1980px) {
+	.slider-block {
+		max-width:  1440px;
+		max-height: 572px
+	}
+}
+
+@media (max-width: 1500px) {
+	.slider-block {
+		width:      1200px;
+		max-height: 496px
+	}
+
+	.slider-block .slider-container {
+		width: 700px
+	}
+}
+
+@media (max-width: 1333px) {
+	.slider-block {
+		max-width:  92%;
+		max-height: 420px
+	}
+
+	.owl-carousel img {
+		max-height: 420px
+	}
+
+	.slider-block .slider-container {
+		width: 650px
+	}
+
+	.slide-info-block > button {
+		font-size: .9rem
+	}
+
+	.close-icon {
+		width:  13px;
+		height: 13px;
+		top:    8px;
+		right:  8px
+	}
+
+	.fixed-top img {
+		height: 40px
+	}
+}
+
+@media (max-width: 992px) {
+	.fixed-top img {
+		height: 30px
+	}
+
+	.heading-large {
+		font-size: 1.5rem
+	}
+
+	p {
+		font-size: 1rem
+	}
+
+	.slider-block {
+		height:    255px;
+		width:     540px;
+		top:       50%;
+		transform: translateY(-50%)
+	}
+
+	.owl-carousel img {
+		height: 255px
+	}
+
+	.slide-info-block {
+		padding-right: 5px
+	}
+
+	.slider-block .slider-container {
+		max-width: 80%
+	}
+
+	.slide-info-block span, .slide-info-block > :not(button), .slide-info-block > button {
+		font-size: .7rem
+	}
+
+	.slide-info-block .slide-info-block__num {
+		font-size: 1.5rem
+	}
+
+	.anchor-numbers__num-block {
+		padding: 10px
+	}
+
+	.anchor-numbers__num-block > * {
+		padding: 5px 0
+	}
+
+	.slider-block .slider-container {
+		width: 70%
+	}
+}
+
+@media (max-width: 600px) {
+	body {
+		font-size: 10px
+	}
+
+	.scrollable {
+		padding: 0 10px
+	}
+
+	.owl-carousel .owl-nav {
+		opacity: 1
+	}
+
+	.owl-carousel img.owl-arrow {
+		width:   45px;
+		height:  auto;
+		padding: 0 15px
+	}
+
+	.slider-block-fixed .slide-info-block {
+		flex:          0 0 25%;
+		padding-right: 12px
+	}
+
+	.slide-info-block .slide-info-block__num, .slide-info-block .slider-block-fixed__title, .slider-container__info > div:last-child a, .slider-container__info > div:last-child h2 {
+		font-size: 1rem
+	}
+
+	.slider-block-fixed .slider-container p, .slider-container__info > div:last-child p {
+		font-size: .7rem
+	}
+
+	.anchor-numbers__num-block, .section .slide-info-block {
+		max-height: 100%
+	}
+
+	.anchor-numbers__num-block > * {
+		padding: 2px 0
+	}
+
+	.slider-block-fixed .slider-container {
+		padding: 0
+	}
+
+	.slider-block {
+		height: 32vw;
+		width:  95%
+	}
+
+	.owl-carousel img {
+		height: 32vw
+	}
+
+	.section .slide-info-block {
+		padding-right: 12px
+	}
+
+	.slider-block .slider-container {
+		max-width: 60%
+	}
+
+	.fixed-left, .fixed-right {
+		align-items:   flex-end;
+		margin-bottom: 15px
+	}
+
+	.slider-block-fixed__link-icon {
+		width:  15px;
+		height: 15px
+	}
+
+	.close-icon {
+		width:  9px;
+		height: 9px
+	}
+
+	.owl-carousel .owl-dots {
+		margin-top: 10px
+	}
+}

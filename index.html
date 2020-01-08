@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Background Video - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez"/>
+	<meta name="description" content="fullPage full-screen background videos."/>
+	<meta name="keywords" content="fullpage,jquery,demo,screen,fullscreen,video,full-screen"/>
+	<meta name="Resource-type" content="Document"/>
+	<link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css"/>
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+</head>
+<body class="hide-panel">
+
+<div class="fixed-num fixed-num-tub">
+	<div class="slider-block">
+		<div class="slide-info-block col"></div>
+		<div class="slider-container"></div>
+		<div class="col d-flex">
+			<div class="anchor-numbers">
+				<div class="anchor-numbers__line"></div>
+				<div class="anchor-numbers__num-block">
+					<a onclick="myFullpage.moveTo('tub-1');"><span>I.</span></a>
+					<a onclick="myFullpage.moveTo('tub-2');"><span>II.</span></a>
+					<a onclick="myFullpage.moveTo('tub-3');"><span>III.</span></a>
+					<a onclick="myFullpage.moveTo('tub-4');"><span>IV.</span></a>
+					<a onclick="myFullpage.moveTo('tub-5');"><span>V.</span></a>
+					<a onclick="myFullpage.moveTo('tub-6');"><span>VI.</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="fixed-num fixed-num-sink">
+	<div class="slider-block">
+		<div class="slide-info-block col"></div>
+		<div class="slider-container"></div>
+		<div class="col d-flex">
+			<div class="anchor-numbers">
+				<div class="anchor-numbers__line"></div>
+				<div class="anchor-numbers__num-block">
+					<a onclick="myFullpage.moveTo('sink-1');"><span>I.</span></a>
+					<a onclick="myFullpage.moveTo('sink-2');"><span>II.</span></a>
+					<a onclick="myFullpage.moveTo('sink-3');"><span>III.</span></a>
+					<a onclick="myFullpage.moveTo('sink-4');"><span>IV.</span></a>
+					<a onclick="myFullpage.moveTo('sink-5');"><span>V.</span></a>
+					<a onclick="myFullpage.moveTo('sink-6');"><span>VI.</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fixed-left">
+	<a onclick="myFullpage.moveTo('tub-1');"><span>Bathtubs</span></a>
+</div>
+<div class="fixed-right">
+	<a onclick="myFullpage.moveTo('sink-1');"><span>Sinks</span></a>
+</div>
+<div class="fixed-bottom">
+	<a href="#" class="show-about">About</a> | <a href="#" class="show-contact">Contact</a>
+</div>
+<div class="fixed-top">
+	<img src="img/logo.png" alt="">
+</div>
+<div class="preloader">
+	<img src="img/logo.png" alt="">
+</div>
+<div id="fullpage">
+	<div class="section hide-fix" id="section-0" data-anchor="head">
+		<video class="video-bg" muted="" loop="" preload="auto" autoplay playsinline data-autoplay>
+			<source src="film.mp4" type="video/mp4">
+		</video>
+		<div class="arrow-down">
+			<object data="img/arrow-down.svg" type="image/svg+xml"></object>
+		</div>
+	</div>
+	<div class="section" id="section-1" data-anchor="text">
+		<div class="text-block">
+			<div class="text-block__text">
+				<div class="heading-large text-block__animation">
+					<div class="overflow-hidden">
+						<span>Six Bathtubs,</span>
+					</div>
+					<div class="overflow-hidden">
+						<span>Six Sinks,</span>
+					</div>
+					<div class="overflow-hidden">
+						<span>Six Finishes.</span>
+					</div>
+				</div>
+				<div class="overflow-hidden">
+					<p>
+						any tub, any sink, any finish
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" data-anchor="tub-1">
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged Black</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BLACK_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BLACK_002.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BLACK_003.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BLACK_004.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+	</div>
+	<div class="section" data-anchor="tub-2">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged Brass</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BRASS_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BRASS_002.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BRASS_003.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20BRASS_004.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="tub-3">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged Grey</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_TUB%20GREY_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20GREY_002.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20GREY_003.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20GREY_004.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="tub-4">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged Pink</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_TUB%20PINK_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20PINK_002.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20PINK_003.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20PINK_004.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="tub-5">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged Silver</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_TUB%20SILVER_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20SILVER_002.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20SILVER_003.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20SILVER_004.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="tub-6">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged White</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_TUB%20WHITE_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20WHITE_002.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20WHITE_003.jpg">
+					<img src="img/19012_VAST%20STUDIO_TUB%20WHITE_004.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="sink-1">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged White</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_SINK%20BLACK_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_SINK%20BLACK_002.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="sink-2">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged White</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_SINK%20BRASS_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_SINK%20BRASS_002.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="sink-3">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged White</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_SINK%20GREY_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_SINK%20GREY_002.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="sink-4">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged White</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_SINK%20PINK_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_SINK%20PINK_002.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="sink-5">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged White</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_SINK%20SILVER_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_SINK%20SILVER_002.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+
+	</div>
+	<div class="section" data-anchor="sink-6">
+
+		<div class="slider-block">
+			<div class="slide-info-block col">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="">
+					<span class="slide-info-block__num">I.</span>
+					<span class="slide-info-block__name">Aged White</span>
+				</div>
+				<div class="">
+					<span class="slide-info-block__price">$0000.0</span>
+					<a href="#" class="slide-info-block__add">ADD TO CART</a>
+				</div>
+				<button class="slide-info-block__details">Item Details</button>
+			</div>
+			<div class="slider-container">
+				<div class="slider-container__info hide d-flex">
+					<div>
+						<span>Style xxxxx</span>
+						<span>Available in all six finishes</span>
+						<span>Available in X weeks</span>
+					</div>
+					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+					<div class="scrollable">
+						<h2>Details</h2>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+					</div>
+				</div>
+				<div class="owl-carousel">
+					<img src="img/19012_VAST%20STUDIO_SINK%20WHITE_001.jpg">
+					<img src="img/19012_VAST%20STUDIO_SINK%20WHITE_002.jpg">
+				</div>
+			</div>
+			<div class="col d-flex"></div>
+		</div>
+	</div>
+</div>
+<!--<div class="slider-block-fixed">-->
+<div class="slider-block-fixed d-none hide about-block">
+	<div class="bottom-close">Close</div>
+	<div class="slider-block">
+		<div class="slide-info-block col">
+			<div class="slider-block-fixed__center">
+				<span class="slider-block-fixed__title">About</span>
+				<div>
+					<a href="mailto:info@vaststudio.com">info@vaststudio.com</a>
+				</div>
+				<div>
+					<a href="#" target="_blank" class="slider-block-fixed__link-icon"><img src="img/twitter.svg"
+																						   alt="twitter"></a>
+				</div>
+				<div>
+					<a href="#" target="_blank" class="slider-block-fixed__link-icon"><img src="img/instagram-logo.svg"
+																						   alt="instagram"></a>
+				</div>
+			</div>
+		</div>
+		<div class="slider-container">
+			<div class="close-about close-icon"><img src="img/close.svg" alt=""></div>
+			<div class="scrollable">
+				<h2>VAST Studio</h2>
+				<p>VAST Studio’s light weight concrete bathtubs are 185lbs vs 1200lbs for a typical solid concrete
+				   bathtub.</p>
+				<p>Our metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+				<p>VAST Studio’s patented technology allows us to mold metal and concrete over our beautiful and smooth
+				   solid surface Corian products.</p>
+				<p>Nequias aboribus delesciis ellenis molo beria di te veligen imusdant quid essincillum et volupta
+				   tusanda dolum dolo ommos rehenimodi temposte dus excestem es estium aut quam vidis ad molore quo
+				   quam, illupta et quunt exceriat am vo</p>
+				<br>
+				<h2>Give Back</h2>
+				<p>VAST Studio is passionate about designing this world to become a more beautiful place. We’re also
+				   just as passionate about leaving this world a better place</p>
+				<p>Habitat for Humanity</p>
+				<p>Ellen DeGeneres’s gorilla fund</p>
+				<p>The Trevor Project</p>
+				<p>Et at quistotatia conescipsus dust am dolorum lit aciundae nos asi ilis mossit rem in pelliciat unt
+				   fugitiu sdandemporia doluptam fuga. Nequias aboribus delesciis ellenis molo beria di te veligen
+				   imusdant quid essincillum et volupta tusanda dolum dolo om- mos rehenimodi temposte dus excestem es
+				   estium aut quam vidis ad molore quo quam, illupta et quunt exceriat am vo</p>
+			</div>
+
+		</div>
+		<div class="col d-flex"></div>
+	</div>
+</div>
+
+<div class="slider-block-fixed d-none hide contact-block">
+	<div class="bottom-close">Close</div>
+	<div class="slider-block">
+		<div class="slide-info-block col">
+			<div class="slider-block-fixed__center">
+				<span class="slider-block-fixed__title">Contact</span>
+				<div>
+					<a href="mailto:info@vaststudio.com">info@vaststudio.com</a>
+				</div>
+				<div>
+					<a href="#" target="_blank" class="slider-block-fixed__link-icon"><img src="img/twitter.svg"
+																						   alt="twitter"></a>
+				</div>
+				<div>
+					<a href="#" target="_blank" class="slider-block-fixed__link-icon"><img src="img/instagram-logo.svg"
+																						   alt="instagram"></a>
+				</div>
+			</div>
+		</div>
+		<div class="slider-container">
+			<div class="close-contact close-icon"><img src="img/close.svg" alt=""></div>
+			<div class="scrollable">
+				<h2>VAST Studio</h2>
+				<p>VAST Studio’s light weight concrete bathtubs are 185lbs vs 1200lbs for a typical solid concrete
+				   bathtub.</p>
+				<p>Our metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+				<p>VAST Studio’s patented technology allows us to mold metal and concrete over our beautiful and smooth
+				   solid surface Corian products.</p>
+				<p>Nequias aboribus delesciis ellenis molo beria di te veligen imusdant quid essincillum et volupta
+				   tusanda dolum dolo ommos rehenimodi temposte dus excestem es estium aut quam vidis ad molore quo
+				   quam, illupta et quunt exceriat am vo</p>
+				<br>
+				<h2>Give Back</h2>
+				<p>VAST Studio is passionate about designing this world to become a more beautiful place. We’re also
+				   just as passionate about leaving this world a better place</p>
+				<p>Habitat for Humanity</p>
+				<p>Ellen DeGeneres’s gorilla fund</p>
+				<p>The Trevor Project</p>
+				<p>Et at quistotatia conescipsus dust am dolorum lit aciundae nos asi ilis mossit rem in pelliciat unt
+				   fugitiu sdandemporia doluptam fuga. Nequias aboribus delesciis ellenis molo beria di te veligen
+				   imusdant quid essincillum et volupta tusanda dolum dolo om- mos rehenimodi temposte dus excestem es
+				   estium aut quam vidis ad molore quo quam, illupta et quunt exceriat am vo</p>
+			</div>
+
+		</div>
+		<div class="col d-flex"></div>
+	</div>
+</div>
+
+<script type="text/javascript" src="node_modules/fullpage.js/dist/fullpage.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+<script type="text/javascript">
+    let infoShowed = false;
+    let myFullpage = new fullpage('#fullpage', {
+        verticalCentered: true,
+        normalScrollElements: '.scrollable',
+        lockAnchors: true
+    });
+    let showInfo = '';
+    const funShowInfo = (elem) => {
+        elem.querySelector('.slider-container__info').classList.remove('hide');
+        elem.querySelector('.slide-info-block__details').innerHTML = 'Close Item Details';
+        elem.querySelector('.slide-info-block__details').classList.add('opened');
+        fullpage_api.setAllowScrolling(false);
+        infoShowed = true;
+    };
+    const funHideInfo = (elem) => {
+        elem.querySelector('.slider-container__info').classList.add('hide');
+        elem.querySelector('.slide-info-block__details').innerHTML = 'Item Details';
+        elem.querySelector('.slide-info-block__details').classList.remove('opened');
+        infoShowed = false;
+    };
+    const hideAll = (status) => {
+        if (status === 'hide') {
+            document.body.classList.add('hide-all');
+            if (showInfo !== '')
+                funHideInfo(showInfo);
+        } else
+            document.body.classList.remove('hide-all');
+    };
+    document.addEventListener("DOMContentLoaded", function () {
+        const aboutBlock = document.getElementsByClassName('about-block')[0];
+        const contactBlock = document.getElementsByClassName('contact-block')[0];
+
+        $(".owl-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            nav: true,
+            touchDrag: true,
+            mouseDrag: true,
+            navText: ["<img src='img/arrow-down.svg' class='owl-arrow'>", "<img src='img/arrow-down.svg' class='owl-arrow'>"],
+            responsive: {
+                0: {
+                    nav: false
+				},
+                600: {
+                    nav: true,
+				}
+			}
+        });
+        const preload = document.querySelector('.preloader');
+        preload.ontransitionend = () => {
+            preload.classList.add('d-none');
+        };
+        aboutBlock.ontransitionend = (e) => {
+            if (e.target.classList.contains('hide')) {
+                e.target.classList.add('d-none');
+                fullpage_api.setAllowScrolling(true);
+            }
+        };
+
+        contactBlock.ontransitionend = (e) => {
+            if (e.target.classList.contains('hide')) {
+                e.target.classList.add('d-none');
+                fullpage_api.setAllowScrolling(true);
+            }
+        };
+
+        preload.classList.add('hide');
+        document.querySelector('.arrow-down').addEventListener('click', () => {
+            myFullpage.moveSectionDown();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.slide-info-block__details')) {
+                e.preventDefault();
+                fullpage_api.setAllowScrolling(false);
+            }
+
+            if (e.target.closest('.show-about')) {
+                aboutBlock.classList.remove('d-none');
+                setTimeout(() => {
+                    aboutBlock.classList.remove('hide');
+                }, 50);
+                fullpage_api.setAllowScrolling(false);
+                hideAll('hide');
+            }
+
+            if (e.target.closest('.close-about') || e.target.closest('.about-block .bottom-close')) {
+                aboutBlock.classList.add('hide');
+                hideAll('show');
+            }
+
+            if (e.target.closest('.show-contact')) {
+                contactBlock.classList.remove('d-none');
+                setTimeout(() => {
+                    contactBlock.classList.remove('hide');
+                }, 50);
+                fullpage_api.setAllowScrolling(false);
+                hideAll('hide');
+            }
+
+            if (e.target.closest('.close-contact') || e.target.closest('.contact-block .bottom-close')) {
+                contactBlock.classList.add('hide');
+                hideAll('show');
+            }
+
+            if (e.target.closest('.slide-info-block__details')) {
+                showInfo = e.target.offsetParent.offsetParent;
+                if (e.target.classList.contains('opened')) {
+                    fullpage_api.setAllowScrolling(true);
+                    funHideInfo(showInfo);
+                } else {
+                    funShowInfo(showInfo);
+                }
+            }
+            if ((e.target.closest('.anchor-numbers__num-block a') && infoShowed) || e.target.closest('.close-info')) {
+                fullpage_api.setAllowScrolling(true);
+                funHideInfo(showInfo);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
