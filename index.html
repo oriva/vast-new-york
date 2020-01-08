@@ -75,7 +75,7 @@
 		<video class="video-bg" muted="" loop="" preload="auto" autoplay playsinline data-autoplay>
 			<source src="film.mp4" type="video/mp4">
 		</video>
-		<div class="arrow-down">
+		<div class="arrow-down" onclick="myFullpage.moveTo('text');">
 			<object data="img/arrow-down.svg" type="image/svg+xml"></object>
 		</div>
 	</div>
@@ -750,9 +750,6 @@
         };
 
         preload.classList.add('hide');
-        document.querySelector('.arrow-down').addEventListener('click', () => {
-            myFullpage.moveSectionDown();
-        });
 
         document.addEventListener('click', (e) => {
             if (e.target.closest('.slide-info-block__details')) {

@@ -9,20 +9,20 @@ body {
 }
 
 .fixed-num {
-	position: fixed;
-	top: 0;
-	text-align: center;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	opacity: 0;
-	transition: .3s;
-	z-index: 9;
+	position:       fixed;
+	top:            0;
+	text-align:     center;
+	left:           0;
+	right:          0;
+	bottom:         0;
+	opacity:        0;
+	transition:     .3s;
+	z-index:        9;
 	pointer-events: none;
 }
 
 body[class*=fp-viewing-tub-] .fixed-num-tub, body[class*=fp-viewing-sink-] .fixed-num-sink {
-	opacity: 1;
+	opacity:          1;
 	transition-delay: .6s;
 }
 
@@ -72,8 +72,8 @@ a {
 }
 
 button {
-	outline:    0;
-	box-shadow: none;
+	outline:     0;
+	box-shadow:  none;
 	font-family: Times New Roman;
 }
 
@@ -319,7 +319,8 @@ video::-webkit-media-controls {
 	height:        70vh;
 	width:         90%;
 	max-width:     1440px;
-	top:           15vh;
+	top:           50%;
+	transform:     translateY(-50%);
 	position:      relative;
 	display:       -ms-flexbox;
 	display:       flex;
@@ -707,10 +708,8 @@ body[class*=" fp-viewing-sink-"] .fixed-right a {
 	}
 
 	.slider-block {
-		height:    255px;
-		width:     540px;
-		top:       50%;
-		transform: translateY(-50%)
+		height: 255px;
+		width:  540px;
 	}
 
 	.owl-carousel img {
@@ -824,5 +823,61 @@ body[class*=" fp-viewing-sink-"] .fixed-right a {
 
 	.owl-carousel .owl-dots {
 		margin-top: 10px
+	}
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+	.slider-block > div {
+		flex: 0 0 100%;
+	}
+
+	.anchor-numbers__num-block > * {
+		display: inline-block;
+	}
+
+	.anchor-numbers__line {
+		width: 100%;
+	}
+
+	.slider-block {
+		height: auto;
+	}
+
+	.slide-info-block > div {
+		display: inline-block;
+		width:   auto;
+		flex: 0 0 auto;
+		align-self: flex-end;
+	}
+
+	.section .slide-info-block > button {
+		display: none;
+	}
+
+	.slide-info-block > *:nth-child(4) {
+		text-align: left;
+	}
+
+	.slide-info-block > *:nth-child(5) {
+		text-align: right;
+		margin-left: auto;
+	}
+
+	.slider-block {
+		width: 80%;
+	}
+
+	.section .slide-info-block {
+		padding-right: 0;
+	}
+
+	.slider-block .slider-container {
+		width: 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.owl-carousel img {
+		height: auto;
 	}
 }
