@@ -100,7 +100,7 @@
 						any tub, any sink, any finish
 					</p>
 				</div>
-				<div onclick="myFullpage.moveTo('tub-1');">
+				<div class="text-block__arrow" onclick="myFullpage.moveTo('tub-1');">
 					<img src="img/arrow-down.svg" alt="">
 				</div>
 			</div>
@@ -740,7 +740,7 @@
         } else
             document.body.classList.remove('hide-all');
     };
-    document.addEventListener("DOMContentLoaded", function () {
+    $(document).ready(function(){
         const aboutBlock = document.getElementsByClassName('about-block')[0];
         const contactBlock = document.getElementsByClassName('contact-block')[0];
 
@@ -754,13 +754,13 @@
             responsive: {
                 0: {
                     nav: false
-				},
+                },
                 600: {
                     nav: true,
-				}
-			}
+                }
+            }
         });
-        const preload = document.querySelector('.preloader');
+        const preload = $('.preloader');
         preload.ontransitionend = () => {
             preload.classList.add('d-none');
         };
@@ -828,14 +828,10 @@
                 funHideInfo(showInfo);
             }
         });
-    });
-    let isAnim = false;
-    document.addEventListener('wheel', ()=>{
-        if(!isAnim && document.querySelector('body').classList.contains('fp-viewing-text')) {
-            isAnim = true;
-            document.querySelector('#section-1').classList.add('animate-was');
-        }
-    });
+	});
+    document.querySelector('.section .text-block__animation span').ontransitionend = ()=>{
+		document.querySelector('#section-1').classList.add('animate-was');
+	};
 </script>
 
 </body>
