@@ -74,7 +74,7 @@
 </div>
 <div id="fullpage">
 	<div class="section hide-fix" id="section-0" data-anchor="head">
-		<video class="video-bg" muted="" loop="" autoplay playsinline data-autoplay>
+		<video class="video-bg" muted="" loop="" playsinline>
 			<source src="film.mp4" type="video/mp4">
 		</video>
 		<div class="arrow-down" onclick="myFullpage.moveTo('text');">
@@ -772,7 +772,9 @@
 		}
     };
 
-    $(document).ready(function () {
+    $(window).on('load', function () {
+        $('.video-bg').attr('autoplay', true).attr('data-autoplay', true);
+
         var aboutBlock = document.getElementsByClassName('about-block')[0];
         var contactBlock = document.getElementsByClassName('contact-block')[0];
         $(".owl-carousel").owlCarousel({
