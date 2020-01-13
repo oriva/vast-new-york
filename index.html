@@ -765,8 +765,11 @@
         if (status === 'hide') {
             document.body.classList.add('hide-all');
             if (showInfo !== '') funHideInfo(showInfo);
-        } else document.body.classList.remove('hide-all');
-        fullpage_api.setAllowScrolling(true);
+            fullpage_api.setAllowScrolling(false);
+        } else {
+            document.body.classList.remove('hide-all');
+            fullpage_api.setAllowScrolling(true);
+		}
     };
 
     $(document).ready(function () {
