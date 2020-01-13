@@ -132,7 +132,18 @@
 					<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
 					<div class="scrollable">
 						<h2>Details</h2>
-						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.</p>
+						<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						   VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+						</p>
 					</div>
 				</div>
 				<div class="owl-carousel">
@@ -712,66 +723,86 @@
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 
 <script type="text/javascript">
-    let infoShowed = false;
-    let myFullpage = new fullpage('#fullpage', {
+    "use strict";
+
+    (function (e) {
+        e.closest = e.closest || function (css) {
+            var node = this;
+
+            while (node) {
+                if (node.matches(css)) return node;
+                else node = node.parentElement;
+            }
+            return null;
+        }
+    })(Element.prototype);
+
+    var infoShowed = false;
+    var myFullpage = new fullpage('#fullpage', {
         verticalCentered: true,
         normalScrollElements: '.scrollable',
         lockAnchors: true
     });
-    let showInfo = '';
-    const funShowInfo = (elem) => {
-        elem.querySelector('.slider-container__info').classList.remove('hide');
-        elem.querySelector('.slide-info-block__details').innerHTML = 'Close Item Details';
-        elem.querySelector('.slide-info-block__details').classList.add('opened');
+    var showInfo = '';
+
+    var funShowInfo = function funShowInfo(elem) {
+        elem.find('.slider-container__info').removeClass('hide');
+        elem.find('.slide-info-block__details').html('Close Item Details');
+        elem.find('.slide-info-block__details').addClass('opened');
         fullpage_api.setAllowScrolling(false);
         infoShowed = true;
     };
-    const funHideInfo = (elem) => {
-        elem.querySelector('.slider-container__info').classList.add('hide');
-        elem.querySelector('.slide-info-block__details').innerHTML = 'Item Details';
-        elem.querySelector('.slide-info-block__details').classList.remove('opened');
+
+    var funHideInfo = function funHideInfo(elem) {
+        elem.find('.slider-container__info').addClass('hide');
+        elem.find('.slide-info-block__details').html('Item Details');
+        elem.find('.slide-info-block__details').removeClass('opened');
         infoShowed = false;
+        fullpage_api.setAllowScrolling(true);
     };
-    const hideAll = (status) => {
+
+    var hideAll = function hideAll(status) {
         if (status === 'hide') {
             document.body.classList.add('hide-all');
-            if (showInfo !== '')
-                funHideInfo(showInfo);
-        } else
-            document.body.classList.remove('hide-all');
+            if (showInfo !== '') funHideInfo(showInfo);
+        } else document.body.classList.remove('hide-all');
+        fullpage_api.setAllowScrolling(true);
     };
-    $(document).ready(function(){
-        const aboutBlock = document.getElementsByClassName('about-block')[0];
-        const contactBlock = document.getElementsByClassName('contact-block')[0];
 
+    $(document).ready(function () {
+        var aboutBlock = document.getElementsByClassName('about-block')[0];
+        var contactBlock = document.getElementsByClassName('contact-block')[0];
         $(".owl-carousel").owlCarousel({
             items: 1,
             loop: true,
             nav: true,
             touchDrag: true,
             mouseDrag: true,
+            smartSpeed: 600,
             navText: ["<img src='img/arrow-down.svg' class='owl-arrow'>", "<img src='img/arrow-down.svg' class='owl-arrow'>"],
             responsive: {
                 0: {
                     nav: false
                 },
-                600: {
-                    nav: true,
+                992: {
+                    nav: true
                 }
             }
         });
-        const preload = $('.preloader');
-        preload.ontransitionend = () => {
+        var preload = $('.preloader')[0];
+
+        preload.ontransitionend = function () {
             preload.classList.add('d-none');
         };
-        aboutBlock.ontransitionend = (e) => {
+
+        aboutBlock.ontransitionend = function (e) {
             if (e.target.classList.contains('hide')) {
                 e.target.classList.add('d-none');
                 fullpage_api.setAllowScrolling(true);
             }
         };
 
-        contactBlock.ontransitionend = (e) => {
+        contactBlock.ontransitionend = function (e) {
             if (e.target.classList.contains('hide')) {
                 e.target.classList.add('d-none');
                 fullpage_api.setAllowScrolling(true);
@@ -780,58 +811,66 @@
 
         preload.classList.add('hide');
 
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.slide-info-block__details')) {
-                e.preventDefault();
-                fullpage_api.setAllowScrolling(false);
-            }
+        $('.show-about').on('click', function () {
+            aboutBlock.classList.remove('d-none');
+            setTimeout(function () {
+                aboutBlock.classList.remove('hide');
+            }, 50);
+            fullpage_api.setAllowScrolling(false);
+            hideAll('hide');
+        });
 
-            if (e.target.closest('.show-about')) {
-                aboutBlock.classList.remove('d-none');
-                setTimeout(() => {
-                    aboutBlock.classList.remove('hide');
-                }, 50);
-                fullpage_api.setAllowScrolling(false);
-                hideAll('hide');
-            }
+        $('.close-about').on('click', function () {
+            aboutBlock.classList.add('hide');
+            hideAll('show');
+        });
 
-            if (e.target.closest('.close-about') || e.target.closest('.about-block .bottom-close')) {
-                aboutBlock.classList.add('hide');
-                hideAll('show');
-            }
+        $('.bottom-close').on('click', function () {
+            console.log($(this).parent());
+            $(this).parent().addClass('hide');
+            hideAll('show');
+        });
 
-            if (e.target.closest('.show-contact')) {
-                contactBlock.classList.remove('d-none');
-                setTimeout(() => {
-                    contactBlock.classList.remove('hide');
-                }, 50);
-                fullpage_api.setAllowScrolling(false);
-                hideAll('hide');
-            }
+        $('.close-icon').on('click', function (e) {
+            showInfo = $(this).parents('.slider-block');
+			fullpage_api.setAllowScrolling(true);
+			funHideInfo(showInfo);
+        });
 
-            if (e.target.closest('.close-contact') || e.target.closest('.contact-block .bottom-close')) {
-                contactBlock.classList.add('hide');
-                hideAll('show');
-            }
+        $('.show-contact').on('click', function () {
+            contactBlock.classList.remove('d-none');
+            setTimeout(function () {
+                contactBlock.classList.remove('hide');
+            }, 50);
+            fullpage_api.setAllowScrolling(false);
+            hideAll('hide');
+        });
 
-            if (e.target.closest('.slide-info-block__details')) {
-                showInfo = e.target.offsetParent.offsetParent;
-                if (e.target.classList.contains('opened')) {
-                    fullpage_api.setAllowScrolling(true);
-                    funHideInfo(showInfo);
-                } else {
-                    funShowInfo(showInfo);
-                }
-            }
-            if ((e.target.closest('.anchor-numbers__num-block a') && infoShowed) || e.target.closest('.close-info')) {
+        $('.close-contact').on('click', function () {
+            contactBlock.classList.add('hide');
+            hideAll('show');
+        });
+
+        $('.slide-info-block__details').on('click', function (e) {
+            showInfo = $(this).parents('.slider-block');
+            fullpage_api.setAllowScrolling(false);
+            if (e.target.classList.contains('opened')) {
                 fullpage_api.setAllowScrolling(true);
                 funHideInfo(showInfo);
+            } else {
+                funShowInfo(showInfo);
             }
         });
-	});
-    document.querySelector('.section .text-block__animation span').ontransitionend = ()=>{
-		document.querySelector('#section-1').classList.add('animate-was');
-	};
+
+        $('.anchor-numbers__num-block a').on('click', function () {
+            fullpage_api.setAllowScrolling(true);
+            funHideInfo(showInfo);
+        });
+    });
+
+    document.querySelector('.section .text-block__animation span').ontransitionend = function () {
+        document.querySelector('#section-1').classList.add('animate-was');
+    };
 </script>
 
 </body>
