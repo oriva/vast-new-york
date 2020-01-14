@@ -875,9 +875,9 @@
         });
     });
 
-    document.querySelector('.section .text-block__animation span').ontransitionend = function () {
+    document.querySelector('.section .text-block__animation span').addEventListener("transitionend", function () {
         document.querySelector('#section-1').classList.add('animate-was');
-    };
+    });
 </script>
 
 </body>
