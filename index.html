@@ -775,6 +775,7 @@
 
     $(window).on('load', function () {
         $('.video-bg').attr('autoplay', true).attr('data-autoplay', true);
+        $('.video-bg')[0].play();
 
         var aboutBlock = document.getElementsByClassName('about-block')[0];
         var contactBlock = document.getElementsByClassName('contact-block')[0];

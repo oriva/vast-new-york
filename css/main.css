@@ -1,5 +1,9 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
 
+.owl-carousel .owl-item img {
+  width: 99.8%;
+}
+
 body {
   background-color: #000;
   color: #fff;
@@ -842,10 +846,10 @@ img.text-block__half-photo {
 @media (max-width: 1333px) {
   .slider-block {
     max-width: 92%;
-    height: 429px
+    height: 433px
   }
   .owl-carousel img {
-    height: 429px
+    height: 433px
   }
   .slider-block .slider-container {
     width: 650px
@@ -926,6 +930,9 @@ img.text-block__half-photo {
   .slider-block, .owl-carousel .owl-item img {
     max-height: 60vh
   }
+  .slide-info-block {
+    height: 100%;
+  }
 }
 
 
@@ -982,9 +989,6 @@ img.text-block__half-photo {
   }
   .fixed-left,
   .fixed-right {
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
     margin-bottom: 15px
   }
   .slider-block-fixed__link-icon {
@@ -1000,9 +1004,21 @@ img.text-block__half-photo {
   }
 }
 
+@media (max-width: 850px) and (orientation: landscape) {
+  .slider-block, .owl-carousel .owl-item img {
+    max-height: 60vh;
+  }
+  .slider-block {
+    max-width: 150vh;
+  }
+  .slide-info-block .slide-info-block__num, .slide-info-block .slider-block-fixed__title {
+    font-size: 1.7rem;
+  }
+}
+
 @media (max-width: 600px) and (orientation: portrait) {
   .slider-block {
-    top: 46%;
+    top: 50%;
   }
 
   .fixed-left,
@@ -1010,6 +1026,9 @@ img.text-block__half-photo {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-bottom: 0;
+    height: 100%;
+    width: 30px;
   }
   .slider-block > div,
   .slider-block-fixed .slide-info-block {
@@ -1062,7 +1081,8 @@ img.text-block__half-photo {
   }
   div.slider-block-fixed .scrollable {
     padding: 0;
-    max-height: 70vh;
+    max-height: 65vh;
+    margin-top: 10px;
   }
   .about-block,
   .contact-block {
@@ -1186,6 +1206,16 @@ img.text-block__half-photo {
     position: absolute;
     top: -56px;
     width: 100%;
+  }
+}
+
+@media (max-height: 350px) {
+  .heading-large {
+    font-size: 1.2rem;
+  }
+  .text-block__arrow img {
+    width: 15px;
+    top: 15px;
   }
 }
 
