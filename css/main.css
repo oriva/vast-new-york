@@ -835,6 +835,49 @@ img.text-block__half-photo {
   top: 0;
 }
 
+@media (min-width: 1980px) {
+  body {
+    font-size: 2.5vh;
+  }
+  .slide-info-block > button, .slide-info-block span, .slide-info-block > :not(button), .slider-block-fixed .slider-container p, .slider-container__info > div:last-child p {
+    font-size: 1em;
+  }
+  .slider-container__info > div:last-child a, .slider-container__info > div:last-child h2 {
+    font-size: 1.5em;
+  }
+  .slide-info-block .slide-info-block__num, .slide-info-block .slider-block-fixed__title {
+    font-size: 2em;
+  }
+  .arrow-down, .fixed-top img {
+    height: 7vh;
+  }
+  .owl-carousel button.owl-dot {
+    height: 1.5vh;
+    width: 1.5vh;
+    margin-right: 0.6vh;
+  }
+  .owl-carousel button.owl-dot:last-child {
+    margin-right: 0;
+  }
+  .owl-carousel img.owl-arrow {
+    width: 13vh;
+    height: 13vh;
+  }
+  .slider-block-fixed__link-icon {
+    width: 3vh;
+    height: 3vh;
+  }
+  .owl-carousel img, .slider-block {
+    height: 60vh;
+  }
+  .slider-container {
+    width: 90vh;
+  }
+  .slider-block {
+    width: auto
+  }
+}
+
 @media (max-width: 1500px) {
   .slider-block {
     width: 1200px;
