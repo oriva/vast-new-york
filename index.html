@@ -12,7 +12,21 @@
 	<link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+        ym(57087877, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/57087877" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
 </head>
 <body class="hide-panel">
 
@@ -67,7 +81,7 @@
 	<a href="#" class="show-about">About</a> | <a href="#" class="show-contact">Contact</a>
 </div>
 <div class="fixed-top">
-	<img src="img/logo.png" alt="">
+	<img src="img/logo.png" alt="" onclick="myFullpage.moveTo('head');">
 </div>
 <div class="preloader">
 	<img src="img/logo.png" alt="">
@@ -115,7 +129,7 @@
 				<div></div>
 				<div class="">
 					<span class="slide-info-block__num">I.</span>
-					<span class="slide-info-block__name">Aged Black</span>
+					<span class="slide-info-block__name">Black</span>
 				</div>
 				<div class="">
 					<span class="slide-info-block__price">$0000.0</span>
@@ -751,6 +765,9 @@
         elem.find('.slide-info-block__details').html('Close Item Details');
         elem.find('.slide-info-block__details').addClass('opened');
         fullpage_api.setAllowScrolling(false);
+        if(window.innerWidth<600) {
+			document.getElementsByTagName('body')[0].classList.add('zpower');
+		}
         infoShowed = true;
     };
 
@@ -758,6 +775,9 @@
         elem.find('.slider-container__info').addClass('hide');
         elem.find('.slide-info-block__details').html('Item Details');
         elem.find('.slide-info-block__details').removeClass('opened');
+        if(window.innerWidth<600) {
+            document.getElementsByTagName('body')[0].classList.remove('zpower');
+        }
         infoShowed = false;
         fullpage_api.setAllowScrolling(true);
     };
@@ -875,9 +895,9 @@
         });
     });
 
-    document.querySelector('.section .text-block__animation span').addEventListener("transitionend", function () {
-        document.querySelector('#section-1').classList.add('animate-was');
-    });
+    // document.querySelector('.section .text-block__animation span').addEventListener("transitionend", function () {
+    //     document.querySelector('#section-1').classList.add('animate-was');
+    // });
 </script>
 
 </body>
