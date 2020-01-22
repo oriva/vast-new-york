@@ -92,7 +92,7 @@
 </div>
 <div id="fullpage">
 	<div class="section hide-fix" id="section-0" data-anchor="head">
-		<video class="video-bg" loop="" playsinline>
+		<video class="video-bg" loop="" playsinline data-keepplaying>
 			<source src="film.mp4" type="video/mp4">
 		</video>
 		<div class="arrow-down" onclick="myFullpage.moveTo('text');">
@@ -893,6 +893,7 @@
         normalScrollElements: '.scrollable',
         lockAnchors: true
     });
+    fullpage_api.setAllowScrolling(false);
     var showInfo = '';
 
     var funShowInfo = function funShowInfo(elem) {
@@ -935,6 +936,7 @@
             preload.classList.add('hide');
             $('.video-bg').attr('autoplay', true).attr('data-autoplay', true);
             $('.video-bg')[0].play();
+            fullpage_api.setAllowScrolling(true);
 		}
 
         $(document).on('keypress',function(e) {
