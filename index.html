@@ -90,6 +90,9 @@
 	<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 	<div class="preloader__after-block">
 		<img src="img/logo.png" alt="">
+		<div class="preloader__after-block__line">
+			<div class="preloader-line"></div>
+		</div>
 		<span>ENTER</span>
 	</div>
 </div>
@@ -940,6 +943,28 @@
             $(this).addClass('muted');
         }
     });
+
+    function check_element(ele)
+    {
+        var all = document.getElementsByTagName("*");
+        var totalele=all.length;
+        var per_inc=100/all.length;
+        if($(ele).on()) {
+            
+		}
+    }
+
+    document.onreadystatechange = function(e)
+    {
+        if(document.readyState=="interactive")
+        {
+            var all = document.getElementsByTagName("*");
+            for (var i=0, max=all.length; i < max; i++)
+            {
+                check_element(all[i]);
+            }
+        }
+    };
 
     $(window).on('load', function () {
         var preload = $('.preloader')[0];
