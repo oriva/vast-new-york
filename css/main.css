@@ -254,7 +254,7 @@ button {
 }
 
 .preloader__after-block {
-	position:   absolute;
+	position:   relative;
 	font-size:  1em;
 	text-align: center;
 }
@@ -444,6 +444,7 @@ img.text-block__half-photo,
 	-webkit-animation: bounce .6s 1.35s 3;
 	-o-animation:      bounce .6s 1.35s 3;
 	animation:         bounce .6s 1.35s 3;
+	transition: .3s;
 }
 
 .section.active .text-block__arrow img:hover {
@@ -1070,7 +1071,7 @@ img.text-block__half-photo {
 
 .block-sound-off {
 	position: fixed;
-	z-index:  1;
+	z-index:  8;
 	right:    15px;
 	top:      10px;
 	width:    17px;
@@ -1670,7 +1671,7 @@ img.text-block__half-photo {
 		transition: .3s;
 	}
 
-	.zpower .fixed-left a, .zpower .fixed-right a, .zpower .fixed-bottom, .zpower .anchor-numbers, .zpower .slide-info-block__mob-add, .zpower .fixed-top img {
+	.zpower .fixed-left a, .zpower .fixed-right a, .zpower .fixed-bottom, .zpower .anchor-numbers, .zpower .slide-info-block__mob-add, .zpower .fixed-top img, .zpower .block-sound-off {
 		pointer-events: none !important;
 		opacity:        0 !important;
 	}
