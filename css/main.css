@@ -1393,10 +1393,6 @@ img.text-block__half-photo {
 	.slider-block {
 		max-width: 150vh;
 	}
-
-	.slide-info-block .slide-info-block__num, .slide-info-block .slider-block-fixed__title {
-		font-size: 1.7rem;
-	}
 }
 
 @media (max-width: 600px) and (orientation: portrait) {
