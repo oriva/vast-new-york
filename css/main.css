@@ -295,13 +295,13 @@ button {
 	cursor:     pointer;
 }
 
-.preloader__after-block span {
+.preloader__after-block .preloader-enter {
 	opacity: 0;
 	pointer-events: none;
 	transition: .5s;
 }
 
-.preloader.ready .preloader__after-block span {
+.preloader.ready .preloader__after-block .preloader-enter {
 	opacity: 1;
 }
 
