@@ -87,7 +87,6 @@
 	<img src="img/logo.png" alt="" onclick="myFullpage.moveTo('head');">
 </div>
 <div class="preloader">
-	<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 	<div class="preloader__after-block">
 		<img src="img/logo.png" alt="">
 		<div class="preloader__after-block__line">
@@ -943,28 +942,42 @@
             $(this).addClass('muted');
         }
     });
-
-    function check_element(ele)
-    {
-        var all = document.getElementsByTagName("*");
-        var totalele=all.length;
-        var per_inc=100/all.length;
-        if($(ele).on()) {
-            
+    var minProgress = 0;
+    function handleEvent(e) {
+		var all = 11037944 / 98;
+		var byteProg = e.loaded;
+        if(byteProg>minProgress) {
+            minProgress = byteProg;
+            console.log(byteProg);
+            $('.preloader-line').css('width', byteProg / all + '%');
+        }
+        // console.log(`${e.type}: ${e.loaded} bytes transferred\n`);
+        if(e.type == 'loadend') {
+            $('.preloader').addClass('ready');
+            $('.preloader-line').css('width', '100%');
 		}
     }
 
-    document.onreadystatechange = function(e)
-    {
-        if(document.readyState=="interactive")
-        {
-            var all = document.getElementsByTagName("*");
-            for (var i=0, max=all.length; i < max; i++)
-            {
-                check_element(all[i]);
-            }
-        }
-    };
+    function addListeners(xhr) {
+        xhr.addEventListener('loadstart', handleEvent);
+        xhr.addEventListener('load', handleEvent);
+        xhr.addEventListener('loadend', handleEvent);
+        xhr.addEventListener('progress', handleEvent);
+        xhr.addEventListener('error', handleEvent);
+        xhr.addEventListener('abort', handleEvent);
+    }
+
+    function runXHR(url) {
+        const xhr = new XMLHttpRequest();
+        addListeners(xhr);
+        xhr.open("GET", url);
+        xhr.send();
+        return xhr;
+    }
+
+    document.querySelector('video').addEventListener("progress", function progressHandler(e) {
+        runXHR('film-old.mp4');
+    });
 
     $(window).on('load', function () {
         var preload = $('.preloader')[0];

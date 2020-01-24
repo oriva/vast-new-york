@@ -269,8 +269,7 @@ button {
 	background-color: #fff;
 	left: 0;
 	height: 100%;
-	width: 0%;
-	transition: .05s;
+	width: 0;
 }
 
 .preloader img {
@@ -282,20 +281,22 @@ button {
 }
 
 .preloader .preloader__after-block {
-	opacity:    0;
+	opacity:    1;
 	transition: 1.7s;
 	cursor:     pointer;
 }
 
-.preloader.wait .lds-default {
+.preloader__after-block span {
 	opacity: 0;
+	pointer-events: none;
+	transition: .5s;
 }
 
-.preloader.wait .preloader__after-block {
+.preloader.ready .preloader__after-block span {
 	opacity: 1;
 }
 
-.preloader.wait .preloader__after-block:hover {
+.preloader.ready .preloader__after-block:hover {
 	opacity: .7;
 }
 
