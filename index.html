@@ -951,11 +951,11 @@
     }
     var minProgress = 0;
     function handleEvent(e) {
-		var all = 11037944 / 98;
+        // console.log(e);
+		var all = e.total / 100;
 		var byteProg = e.loaded;
         if(byteProg>minProgress) {
             minProgress = byteProg;
-            console.log(byteProg);
             $('.preloader-line').css('width', byteProg / all + '%');
         }
         // console.log(`${e.type}: ${e.loaded} bytes transferred\n`);
@@ -968,7 +968,7 @@
                 }
             });
 
-            $('.preloader__after-block').on('click', function(){
+            $('.preloader-enter').on('click', function(){
                 playVideo();
             });
 		}
@@ -992,7 +992,7 @@
     }
 
     document.querySelector('video').addEventListener("progress", function progressHandler(e) {
-        runXHR('film-old.mp4');
+        runXHR('film.mp4');
     });
 
     $(window).on('load', function () {
