@@ -98,7 +98,7 @@
 <div id="fullpage">
 	<div class="section hide-fix" id="section-0" data-anchor="head">
 		<video class="video-bg" loop="" playsinline data-keepplaying>
-			<source src="film.mp4" type="video/mp4">
+			<source src="" type="video/mp4">
 		</video>
 		<div class="arrow-down" onclick="myFullpage.moveTo('text');">
 			<object data="img/arrow-down.svg" type="image/svg+xml"></object>
@@ -949,17 +949,42 @@
         $('.video-bg')[0].play();
         fullpage_api.setAllowScrolling(true);
     }
-    var minProgress = 0;
-    function handleEvent(e) {
-        // console.log(e);
-		var all = e.total / 100;
-		var byteProg = e.loaded;
-        if(byteProg>minProgress) {
-            minProgress = byteProg;
-            $('.preloader-line').css('width', byteProg / all + '%');
-        }
-        // console.log(`${e.type}: ${e.loaded} bytes transferred\n`);
-        if(e.type == 'loadend') {
+
+
+    // function addListeners(xhr) {
+    //     xhr.addEventListener('loadstart', handleEvent);
+    //     xhr.addEventListener('load', handleEvent);
+    //     xhr.addEventListener('loadend', handleEvent);
+    //     xhr.addEventListener('progress', handleEvent);
+    //     xhr.addEventListener('error', handleEvent);
+    //     xhr.addEventListener('abort', handleEvent);
+    // }
+	//
+    // function runXHR(url) {
+    //     const xhr = new XMLHttpRequest();
+    //     addListeners(xhr);
+    //     xhr.open("GET", url);
+    //     xhr.send();
+    //     return xhr;
+    // }
+	//
+    // // document.querySelector('video').addEventListener("progress", function progressHandler(e) {
+	// runXHR('film.mp4');
+    // // });
+
+    var req = new XMLHttpRequest();
+    req.open('GET', 'film.mp4', true);
+    req.responseType = 'blob';
+
+    req.onload = function() {
+        // Onload is triggered even on 404
+        // so we need to check the status code
+        if (this.status === 200) {
+            var videoBlob = this.response;
+            // Video is now downloaded
+            // and we can set it as source on the video element
+            // video.src = vid;
+            $(".video-bg")[0].src = window.URL.createObjectURL(videoBlob);
             $('.preloader').addClass('ready');
             $('.preloader-line').css('width', '100%');
             $(document).on('keypress',function(e) {
@@ -971,29 +996,18 @@
             $('.preloader-enter').on('click', function(){
                 playVideo();
             });
-		}
-    }
+        }
+    };
+    req.onprogress = function(e) {
+        var all = e.total / 100;
+        var byteProg = e.loaded;
+		$('.preloader-line').css('width', byteProg / all + '%');
+	};
+    req.onerror = function() {
+        // Error
+    };
 
-    function addListeners(xhr) {
-        xhr.addEventListener('loadstart', handleEvent);
-        xhr.addEventListener('load', handleEvent);
-        xhr.addEventListener('loadend', handleEvent);
-        xhr.addEventListener('progress', handleEvent);
-        xhr.addEventListener('error', handleEvent);
-        xhr.addEventListener('abort', handleEvent);
-    }
-
-    function runXHR(url) {
-        const xhr = new XMLHttpRequest();
-        addListeners(xhr);
-        xhr.open("GET", url);
-        xhr.send();
-        return xhr;
-    }
-
-    // document.querySelector('video').addEventListener("progress", function progressHandler(e) {
-	runXHR('film.mp4');
-    // });
+    req.send();
 
     $(window).on('load', function () {
 
