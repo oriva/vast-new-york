@@ -1446,7 +1446,7 @@ img.text-block__half-photo {
 
 	.slider-container__info {
 		position:         fixed;
-		height:           100vh;
+		height:           calc(100vh - 60px);
 		top:              50%;
 		transform:        translateY(-50%);
 		background-color: #000;
@@ -1698,12 +1698,13 @@ img.text-block__half-photo {
 	}
 
 	.section .close-info {
-		right: 11px
+		right: 17px
 	}
 
 	.slider-container__info > div:last-child {
 		flex:      0 0 100%;
 		max-width: 100%;
+		max-height: none;
 	}
 
 	.fixed-top {
