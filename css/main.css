@@ -1403,6 +1403,10 @@ img.text-block__half-photo {
 		font-size: 13px
 	}
 
+	.slider-container .owl-false img {
+		margin-bottom: 25px;
+	}
+
 	.section .slide-info-block__num, .section .slide-info-block__name {
 		display:   inline-block;
 		width:     auto;
