@@ -1447,10 +1447,16 @@ img.text-block__half-photo {
 	.slider-container__info {
 		position:         fixed;
 		height:           calc(100vh - 60px);
+		min-height: -webkit-fill-available;
 		top:              50%;
 		transform:        translateY(-50%);
 		background-color: #000;
 		overflow-y:       auto;
+	}
+	@supports (-webkit-appearance:none) {
+		.slider-container__info {
+			height: calc(100vh - 56px);
+		}
 	}
 
 	.slider-block > div,
@@ -1698,7 +1704,8 @@ img.text-block__half-photo {
 	}
 
 	.section .close-info {
-		right: 17px
+		right: 17px;
+		top: 17px;
 	}
 
 	.slider-container__info > div:last-child {
