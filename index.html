@@ -138,6 +138,34 @@
 		</div>
 	</div>
 	<div class="section" data-anchor="tub-1">
+		<!--mob-->
+		<div class="slider-mob-info hide">
+			<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+			<div class="scrollable">
+				<div class="slider-mob-info__first-block">
+					<span>Style xxxxx</span>
+					<span>Available in all six finishes</span>
+					<span>Available in X weeks</span>
+				</div>
+				<h2>Details</h2>
+				<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+					<br><br>Our patented technology allows us to mold metal and concrete over our beautiful and
+				   smooth solid surface Corian products.
+					<br><br>Due to the manual finishing process, burnished bathtubs will show variation in the
+				   amount of exterior finish distress.
+				</p>
+				<h2>Technical Specifications</h2>
+				<p>Style:
+					<br>Capacity - gal (l)
+					<br>Weight - lbs (kg)
+					<br>Height - in (mm)
+					<br>Length - in (mm)
+					<br>Width - in (mm)
+					<br>xxxxx x (x) x (x) x (x) x (x) x (x)</p>
+				<a href="pdf/VI-T.pdf" download="">DOWNLOAD SPECIFICATION SHEET</a>
+			</div>
+		</div>
+
 		<div class="slider-block">
 			<div class="slide-info-block col">
 				<div></div>
@@ -193,6 +221,33 @@
 		</div>
 	</div>
 	<div class="section" data-anchor="tub-2">
+		<!--mob-->
+		<div class="slider-mob-info hide">
+			<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+			<div class="scrollable">
+				<div class="slider-mob-info__first-block">
+					<span>Style xxxxx</span>
+					<span>Available in all six finishes</span>
+					<span>Available in X weeks</span>
+				</div>
+				<h2>Details</h2>
+				<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+					<br><br>Our patented technology allows us to mold metal and concrete over our beautiful and
+				   smooth solid surface Corian products.
+					<br><br>Due to the manual finishing process, burnished bathtubs will show variation in the
+				   amount of exterior finish distress.
+				</p>
+				<h2>Technical Specifications</h2>
+				<p>Style:
+					<br>Capacity - gal (l)
+					<br>Weight - lbs (kg)
+					<br>Height - in (mm)
+					<br>Length - in (mm)
+					<br>Width - in (mm)
+					<br>xxxxx x (x) x (x) x (x) x (x) x (x)</p>
+				<a href="pdf/I-T.pdf" download="">DOWNLOAD SPECIFICATION SHEET</a>
+			</div>
+		</div>
 
 		<div class="slider-block">
 			<div class="slide-info-block col">
@@ -1126,11 +1181,6 @@
             hideAll('show');
         });
 
-        $('.close-icon').on('click', function (e) {
-            showInfo = $(this).parents('.slider-block');
-            fullpage_api.setAllowScrolling(true);
-            funHideInfo(showInfo);
-        });
 
         $('.show-contact').on('click', function () {
             contactBlock.classList.remove('d-none');
@@ -1146,15 +1196,49 @@
             hideAll('show');
         });
 
-        $('.slide-info-block__details').on('click', function (e) {
-            showInfo = $(this).parents('.slider-block');
-            fullpage_api.setAllowScrolling(false);
-            if (e.target.classList.contains('opened')) {
+        const mobInfo = function(type, elem) {
+			if (type=='show') {
+                fullpage_api.setAllowScrolling(false);
+                showInfo.removeClass('hide');
+                document.getElementsByTagName('body')[0].classList.add('zpower');
+			} else {
+                fullpage_api.setAllowScrolling(true);
+                elem.addClass('hide');
+                document.getElementsByTagName('body')[0].classList.remove('zpower');
+			}
+		};
+
+        $('.close-icon').on('click', function (e) {
+            console.log($(this).parent());
+            if($(this).parent().hasClass('slider-mob-info')) {
+                showInfo = $(this).parents('.fp-tableCell').find('.slider-mob-info');
+                fullpage_api.setAllowScrolling(true);
+                mobInfo('hide', showInfo);
+			} else {
+                showInfo = $(this).parents('.slider-block');
                 fullpage_api.setAllowScrolling(true);
                 funHideInfo(showInfo);
-            } else {
-                funShowInfo(showInfo);
-            }
+			}
+        });
+
+        $('.slide-info-block__details').on('click', function (e) {
+            if($(this).hasClass('slide-info-block__mob-add')) {
+                showInfo = $(this).parents('.fp-tableCell').find('.slider-mob-info');
+                if(showInfo.hasClass('hide')) {
+                    mobInfo('show', showInfo);
+				} else {
+                    mobInfo('hide', showInfo);
+				}
+			} else {
+                showInfo = $(this).parents('.slider-block');
+                fullpage_api.setAllowScrolling(false);
+                if (e.target.classList.contains('opened')) {
+                    fullpage_api.setAllowScrolling(true);
+                    funHideInfo(showInfo);
+                } else {
+                    funShowInfo(showInfo);
+                }
+			}
         });
 
         $('.anchor-numbers__num-block a').on('click', function () {
