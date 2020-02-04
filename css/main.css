@@ -1750,10 +1750,11 @@ img.text-block__half-photo {
 		-o-transition:      1s;
 		transition:         1s;
 		height: 100%;
+		pointer-events: all;
 	}
 
 	.slider-mob-info.hide {
-		z-index: -1;
+		pointer-events: none;
 		height: 100%;
 		width: 100%;
 		opacity: 0;
