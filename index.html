@@ -1097,16 +1097,12 @@
     req.send();
 
     $(window).on('load', function () {
-        if (window.innerHeight < 600) {
-            $('.slider-container__info').height(window.innerHeight);
-            $(window).resize(function () {
-                $('.slider-container__info').height(window.innerHeight);
-            });
-        }
-        Array.from(document.getElementsByTagName('*')).forEach((e) => {
-            if (e.clientWidth > window.innerWidth)
-                console.log(e)
-        });
+        // if (window.innerHeight < 600) {
+        //     $('.slider-container__info').height(window.innerHeight);
+        //     $(window).resize(function () {
+        //         $('.slider-container__info').height(window.innerHeight);
+        //     });
+        // }
 
 
         var aboutBlock = document.getElementsByClassName('about-block')[0];
