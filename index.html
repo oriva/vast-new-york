@@ -93,6 +93,32 @@
 <div style="cursor: pointer;" class="fixed-top">
 	<img src="img/logo.png" alt="" onclick="myFullpage.moveTo('head');">
 </div>
+<div class="slider-mob-info hide">
+	<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
+	<div class="scrollable">
+		<div class="slider-mob-info__first-block">
+			<span>Style xxxxx</span>
+			<span>Available in all six finishes</span>
+			<span>Available in X weeks</span>
+		</div>
+		<h2>Details</h2>
+		<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
+			<br><br>Our patented technology allows us to mold metal and concrete over our beautiful and
+		   smooth solid surface Corian products.
+			<br><br>Due to the manual finishing process, burnished bathtubs will show variation in the
+		   amount of exterior finish distress.
+		</p>
+		<h2>Technical Specifications</h2>
+		<p>Style:
+			<br>Capacity - gal (l)
+			<br>Weight - lbs (kg)
+			<br>Height - in (mm)
+			<br>Length - in (mm)
+			<br>Width - in (mm)
+			<br>xxxxx x (x) x (x) x (x) x (x) x (x)</p>
+		<a href="pdf/VI-T.pdf" download="">DOWNLOAD SPECIFICATION SHEET</a>
+	</div>
+</div>
 <div class="preloader">
 	<div class="preloader__after-block">
 		<img src="img/logo.png" alt="">
@@ -139,32 +165,7 @@
 	</div>
 	<div class="section" data-anchor="tub-1">
 		<!--mob-->
-		<div class="slider-mob-info hide">
-			<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
-			<div class="scrollable">
-				<div class="slider-mob-info__first-block">
-					<span>Style xxxxx</span>
-					<span>Available in all six finishes</span>
-					<span>Available in X weeks</span>
-				</div>
-				<h2>Details</h2>
-				<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
-					<br><br>Our patented technology allows us to mold metal and concrete over our beautiful and
-				   smooth solid surface Corian products.
-					<br><br>Due to the manual finishing process, burnished bathtubs will show variation in the
-				   amount of exterior finish distress.
-				</p>
-				<h2>Technical Specifications</h2>
-				<p>Style:
-					<br>Capacity - gal (l)
-					<br>Weight - lbs (kg)
-					<br>Height - in (mm)
-					<br>Length - in (mm)
-					<br>Width - in (mm)
-					<br>xxxxx x (x) x (x) x (x) x (x) x (x)</p>
-				<a href="pdf/VI-T.pdf" download="">DOWNLOAD SPECIFICATION SHEET</a>
-			</div>
-		</div>
+
 
 		<div class="slider-block">
 			<div class="slide-info-block col">
@@ -221,33 +222,7 @@
 		</div>
 	</div>
 	<div class="section" data-anchor="tub-2">
-		<!--mob-->
-		<div class="slider-mob-info hide">
-			<div class="close-icon close-info"><img src="img/close.svg" alt=""></div>
-			<div class="scrollable">
-				<div class="slider-mob-info__first-block">
-					<span>Style xxxxx</span>
-					<span>Available in all six finishes</span>
-					<span>Available in X weeks</span>
-				</div>
-				<h2>Details</h2>
-				<p>VAST Studio’s metal bathtubs are 165lbs vs 500lbs for a typical solid metal bathtub.
-					<br><br>Our patented technology allows us to mold metal and concrete over our beautiful and
-				   smooth solid surface Corian products.
-					<br><br>Due to the manual finishing process, burnished bathtubs will show variation in the
-				   amount of exterior finish distress.
-				</p>
-				<h2>Technical Specifications</h2>
-				<p>Style:
-					<br>Capacity - gal (l)
-					<br>Weight - lbs (kg)
-					<br>Height - in (mm)
-					<br>Length - in (mm)
-					<br>Width - in (mm)
-					<br>xxxxx x (x) x (x) x (x) x (x) x (x)</p>
-				<a href="pdf/I-T.pdf" download="">DOWNLOAD SPECIFICATION SHEET</a>
-			</div>
-		</div>
+
 
 		<div class="slider-block">
 			<div class="slide-info-block col">
@@ -1037,40 +1012,13 @@
         fullpage_api.setAllowScrolling(true);
     }
 
-
-    // function addListeners(xhr) {
-    //     xhr.addEventListener('loadstart', handleEvent);
-    //     xhr.addEventListener('load', handleEvent);
-    //     xhr.addEventListener('loadend', handleEvent);
-    //     xhr.addEventListener('progress', handleEvent);
-    //     xhr.addEventListener('error', handleEvent);
-    //     xhr.addEventListener('abort', handleEvent);
-    // }
-    //
-    // function runXHR(url) {
-    //     const xhr = new XMLHttpRequest();
-    //     addListeners(xhr);
-    //     xhr.open("GET", url);
-    //     xhr.send();
-    //     return xhr;
-    // }
-    //
-    // // document.querySelector('video').addEventListener("progress", function progressHandler(e) {
-    // runXHR('film.mp4');
-    // // });
-
     var req = new XMLHttpRequest();
     req.open('GET', 'film.mp4', true);
     req.responseType = 'blob';
 
     req.onload = function () {
-        // Onload is triggered even on 404
-        // so we need to check the status code
         if (this.status === 200) {
             var videoBlob = this.response;
-            // Video is now downloaded
-            // and we can set it as source on the video element
-            // video.src = vid;
             $(".video-bg")[0].src = window.URL.createObjectURL(videoBlob);
             $('.preloader').addClass('ready');
             $('.preloader-line').css('width', '100%');
@@ -1097,13 +1045,6 @@
     req.send();
 
     $(window).on('load', function () {
-        // if (window.innerHeight < 600) {
-        //     $('.slider-container__info').height(window.innerHeight);
-        //     $(window).resize(function () {
-        //         $('.slider-container__info').height(window.innerHeight);
-        //     });
-        // }
-
 
         var aboutBlock = document.getElementsByClassName('about-block')[0];
         var contactBlock = document.getElementsByClassName('contact-block')[0];
@@ -1205,9 +1146,8 @@
 		};
 
         $('.close-icon').on('click', function (e) {
-            console.log($(this).parent());
             if($(this).parent().hasClass('slider-mob-info')) {
-                showInfo = $(this).parents('.fp-tableCell').find('.slider-mob-info');
+                showInfo = $(this).parents('.slider-mob-info');
                 fullpage_api.setAllowScrolling(true);
                 mobInfo('hide', showInfo);
 			} else {
@@ -1219,9 +1159,16 @@
 
         $('.slide-info-block__details').on('click', function (e) {
             if($(this).hasClass('slide-info-block__mob-add')) {
-                showInfo = $(this).parents('.fp-tableCell').find('.slider-mob-info');
+                showInfo = $('.slider-mob-info');
                 if(showInfo.hasClass('hide')) {
-                    mobInfo('show', showInfo);
+                    let infoBlock = $(this).parents('.slider-block').find('.slider-container');
+                    let infoFirst = infoBlock.find('.slider-container__info').children()[0].innerHTML;
+                    let infoSecond = infoBlock.find('.slider-container__info').children()[2].innerHTML;
+					showInfo.find('.scrollable').html('<div class="slider-mob-info__first-block">' +
+						infoFirst + '</div>' + infoSecond);
+					setTimeout(()=>{
+                    	mobInfo('show', showInfo);
+					},100);
 				} else {
                     mobInfo('hide', showInfo);
 				}
