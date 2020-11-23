@@ -1031,7 +1031,21 @@
             $('.preloader-enter').on('click', function () {
                 playVideo();
             });
-        }
+        } else {
+		var videoBlob = this.response;
+            $(".video-bg")[0].src = window.URL.createObjectURL(videoBlob);
+            $('.preloader').addClass('ready');
+            $('.preloader-line').css('width', '100%');
+            $(document).on('keypress', function (e) {
+                if (e.which == 13) {
+                    playVideo();
+                }
+            });
+
+            $('.preloader-enter').on('click', function () {
+                playVideo();
+            });
+	}
     };
     req.onprogress = function (e) {
         var all = e.total / 100;
