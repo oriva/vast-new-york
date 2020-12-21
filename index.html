@@ -1012,53 +1012,65 @@
         fullpage_api.setAllowScrolling(true);
     }
 
-    var req = new XMLHttpRequest();
-    req.open('GET', 'film.mp4', true);
-    req.responseType = 'blob';
+    //var req = new XMLHttpRequest();
+    //req.open('GET', 'film.mp4', true);
+    //req.responseType = 'blob';
 
-    req.onload = function () {
-        if (this.status === 200) {
-            var videoBlob = this.response;
-            $(".video-bg")[0].src = window.URL.createObjectURL(videoBlob);
-            $('.preloader').addClass('ready');
-            $('.preloader-line').css('width', '100%');
-            $(document).on('keypress', function (e) {
-                if (e.which == 13) {
-                    playVideo();
-                }
-            });
+    //req.onload = function () {
+//         if (this.status === 200) {
+//             var videoBlob = this.response;
+//             $(".video-bg")[0].src = window.URL.createObjectURL(videoBlob);
+//             $('.preloader').addClass('ready');
+//             $('.preloader-line').css('width', '100%');
+//             $(document).on('keypress', function (e) {
+//                 if (e.which == 13) {
+//                     playVideo();
+//                 }
+//             });
 
-            $('.preloader-enter').on('click', function () {
-                playVideo();
-            });
-        } else {
-		var videoBlob = this.response;
-            $(".video-bg")[0].src = window.URL.createObjectURL(videoBlob);
-            $('.preloader').addClass('ready');
-            $('.preloader-line').css('width', '100%');
-            $(document).on('keypress', function (e) {
-                if (e.which == 13) {
-                    playVideo();
-                }
-            });
+//             $('.preloader-enter').on('click', function () {
+//                 playVideo();
+//             });
+//         } else {
+// 		var videoBlob = this.response;
+//             $(".video-bg")[0].src = window.URL.createObjectURL(videoBlob);
+//             $('.preloader').addClass('ready');
+//             $('.preloader-line').css('width', '100%');
+//             $(document).on('keypress', function (e) {
+//                 if (e.which == 13) {
+//                     playVideo();
+//                 }
+//             });
 
-            $('.preloader-enter').on('click', function () {
-                playVideo();
-            });
-	}
-    };
-    req.onprogress = function (e) {
-        var all = e.total / 100;
-        var byteProg = e.loaded;
-        $('.preloader-line').css('width', byteProg / all + '%');
-    };
-    req.onerror = function () {
-        // Error
-    };
+//             $('.preloader-enter').on('click', function () {
+//                 playVideo();
+//             });
+// 	}
+    //};
+   // req.onprogress = function (e) {
+//         var all = e.total / 100;
+//         var byteProg = e.loaded;
+//         $('.preloader-line').css('width', byteProg / all + '%');
+//     };
+//     req.onerror = function () {
+//         // Error
+//     };
 
-    req.send();
+//     req.send();
 
     $(window).on('load', function () {
+	$(".video-bg")[0].src = 'film.mp4';
+    	$('.preloader').addClass('ready');
+    	$('.preloader-line').css('width', '100%');
+	$(document).on('keypress', function (e) {
+	if (e.which == 13) {
+	    playVideo();
+	}
+	});
+
+	$('.preloader-enter').on('click', function () {
+	playVideo();
+	});
 
         var aboutBlock = document.getElementsByClassName('about-block')[0];
         var contactBlock = document.getElementsByClassName('contact-block')[0];
